@@ -241,8 +241,7 @@ static struct rb_node *rebuild_tree(const char *file)
 	 * index of p_slots to get the real node pointer of its subnode
 	 *
 	 * */
-	void **p_slots = (void **)malloc((fh.total_count+1) * fh.each_node_size);
-	//memset(p_slots, 0, total_count * sizeof(bnode *));
+	void **p_slots = (void **)malloc((fh.total_count+1) * sizeof(void *));
 
 	char *raw_node = NULL;
 	struct rb_node *rbnode= NULL;
